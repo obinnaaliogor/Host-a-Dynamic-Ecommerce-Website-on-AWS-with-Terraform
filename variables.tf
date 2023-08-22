@@ -74,3 +74,4 @@ variable "availability_zones" {
   description = "A variable for azs"
   default = [ "us-east-1a", "us-east-1b" ]
 }
+#
