@@ -75,14 +75,14 @@ variable "availability_zones" {
   default     = ["us-east-1a", "us-east-1b"]
 }
 
-#Create a Security Group Variable
+#11 Create a Security Group Variable
 variable "ssh_security_group_cidr_blocks" {
   type        = list(string)
   description = "SSH Security Group cidr blocks"
   default     = ["89.64.80.15/32"]
 }
 
-#Create a RDS Variables
+#12 Create a RDS Variables
 variable "db_snapshot_identifier" {
   type        = string
   description = "DB snapshot identifier"
@@ -104,30 +104,44 @@ variable "database_instance_class" {
 
 
 
-#Certificate Manager Variables
+#13 Certificate Manager Variables
 variable "ssl_certificate_arn" {
   type        = string
   description = "Certificate Manager ARN"
   default     = "arn:aws:acm:us-east-1:612500737416:certificate/2d80a295-a450-442b-88d7-b9f317930f45"
 }
 
-##SNS variables
+##14 Create SNS variables
 
 variable "sns_endpoint" {
-  type = string
+  type        = string
   description = "SNS endpoint which is email address"
-  default = "wiz.obi7509@gmail.com"
+  default     = "wiz.obi7509@gmail.com"
 }
 
-###Route53 Variables
+##15 Create Route53 Variables
 variable "hosted_zone" {
-  type = string
+  type        = string
   description = "DNS hosted zone which is our domain name"
-  default = "wiz-obi.com"
+  default     = "wiz-obi.com"
 }
 
 variable "a_record" {
-type = string
+  type        = string
   description = "Site domain name or A record"
-  default = "www" #you can also use "app", "webapp" etc
+  default     = "www" #you can also use "app", "webapp" etc
+}
+
+
+#Create ASG Variables
+variable "instance_type" {
+  type        = string
+  description = "Instance Type for auto scaling group"
+  default     = "t2.micro"
+}
+
+variable "key_name" {
+  type = string
+  description = "SSH key pair"
+  default = "html-key"
 }

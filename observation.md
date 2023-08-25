@@ -140,3 +140,18 @@ I also noted that once i destroy resources, and try to create it again, some of 
 Changing the rds instance indentifier to reflect the actual rds id in my snapshot solved this problem.
 
 App was deployed and ran successfully.
+
+Important:
+explain this output "website_url" {
+  value = join ("", ["https://", var.a_record, ".", var.hosted_zone ]) #The function join will join the items in the list
+}
+
+The provided output block defines a Terraform output named "website_url". This output is composed of a URL constructed by joining together several variables using the `join` function.
+
+Here's a breakdown of the code:
+
+- `value = join("", ["https://", var.a_record, ".", var.hosted_zone])`: This line specifies the value of the "website_url" output. The `join` function is used to concatenate the elements in the list provided as the second argument. In this case, the list contains three elements: the string "https://", the value of the variable `var.a_record`, a dot ("."), and the value of the variable `var.hosted_zone`. The first argument to the `join` function is an empty string ("") which acts as the separator between the elements in the list.
+
+As a result, the "website_url" output will be a URL formed by combining the "https://", the value of the `var.a_record`, a dot, and the value of the `var.hosted_zone`.
+
+For example, if `var.a_record` is "example" and `var.hosted_zone` is "mydomain.com", the output "website_url" would be "https://example.mydomain.com".

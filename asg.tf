@@ -30,8 +30,8 @@ data "aws_ami" "my_image" {
 resource "aws_launch_template" "webserver_launch_template" {
   name          = "fleetcart-launch-template"
   image_id      = data.aws_ami.my_image.id
-  instance_type = "t2.micro"
-  key_name      = "html-key"
+  instance_type = var.instance_type #"t2.micro"
+  key_name      = var.key_name #"html-key"
   description   = "Launch Template for Fleetcart Application"
 
   monitoring {
