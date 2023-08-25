@@ -86,13 +86,13 @@ variable "ssh_security_group_cidr_blocks" {
 variable "db_snapshot_identifier" {
   type        = string
   description = "DB snapshot identifier"
-  default     = "arn:aws:rds:us-east-1:612500737416:snapshot:elvis-obi-fleetapp-snapshot"
+  default     = "arn:aws:rds:us-east-1:612500737416:snapshot:fleetcart-db-snapshot"
 }
 
 variable "db_identifier" {
   type        = string
   description = "DB identifier for mysql rds"
-  default     = "fleetcart-db-id"
+  default     = "fleetcart-id" #get this from the snapshot
 
 }
 

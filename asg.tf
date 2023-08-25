@@ -7,7 +7,7 @@ data "aws_ami" "my_image" {
 
   filter {
     name   = "name"
-    values = ["Updated Fleetcart Dynamic application AMI"] #Gets you amazon linux 2 AMI
+    values = ["fleetcart-application-latest"] #Gets you amazon linux 2 AMI
     #values = ["ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*"] #gets you ubuntu AMI
   }
 
