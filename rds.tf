@@ -21,7 +21,7 @@ data "aws_db_snapshot" "latest_db_snapshot" {
 # create database instance restored from db snapshots
 # terraform aws db instance
 resource "aws_db_instance" "database_instance" {
-  instance_class         = "db.t3.micro"
+  instance_class         = var.database_instance_class #"db.t3.micro"
   skip_final_snapshot    = true
   availability_zone      = var.availability_zones[1]
   identifier             = var.db_identifier

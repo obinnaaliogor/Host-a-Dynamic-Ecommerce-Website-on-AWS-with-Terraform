@@ -9,5 +9,5 @@ resource "aws_sns_topic" "user_updates" {
 resource "aws_sns_topic_subscription" "notification_topic" {
   topic_arn = aws_sns_topic.user_updates.arn
   protocol  = "email"
-  endpoint  = "wiz.obi7509@gmail.com"
+  endpoint  = var.sns_endpoint #"xxx@gmail.com"
 }

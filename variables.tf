@@ -95,10 +95,39 @@ variable "db_identifier" {
   default     = "fleetcart-id" #get this from the snapshot
 
 }
+variable "database_instance_class" {
+  type        = string
+  description = "DB instance class for mysql rds"
+  default     = "db.t3.micro" #get this from the snapshot
+
+}
+
+
 
 #Certificate Manager Variables
 variable "ssl_certificate_arn" {
   type        = string
   description = "Certificate Manager ARN"
   default     = "arn:aws:acm:us-east-1:612500737416:certificate/2d80a295-a450-442b-88d7-b9f317930f45"
+}
+
+##SNS variables
+
+variable "sns_endpoint" {
+  type = string
+  description = "SNS endpoint which is email address"
+  default = "wiz.obi7509@gmail.com"
+}
+
+###Route53 Variables
+variable "hosted_zone" {
+  type = string
+  description = "DNS hosted zone which is our domain name"
+  default = "wiz-obi.com"
+}
+
+variable "a_record" {
+type = string
+  description = "Site domain name or A record"
+  default = "www" #you can also use "app", "webapp" etc
 }
